@@ -6,7 +6,7 @@ WORKDIR '/app'
 COPY package.json ./
 RUN npm install
 COPY ./ ./
-CMD ["npm", "run", "build"]
+RUN ["npm", "run", "build"]
 
 # Phase 2 (no 'as', because it is the last phase)
 FROM nginx
