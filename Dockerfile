@@ -3,9 +3,9 @@
 # Phase 1 - builder
 FROM node:alpine as builder
 WORKDIR '/app'
-COPY package.json .
+COPY package.json ./
 RUN npm install
-COPY . .
+COPY ./ ./
 CMD ["npm", "run", "build"]
 
 # Phase 2 (no 'as', because it is the last phase)
